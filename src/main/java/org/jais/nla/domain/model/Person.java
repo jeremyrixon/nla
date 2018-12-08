@@ -28,7 +28,7 @@ public class Person {
     @Column
     private String contactNumber;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST)
+    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
     private Set<Book> books = new HashSet<>();
 
 
