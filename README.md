@@ -9,7 +9,7 @@ Following assumptions are made while building the project :-
 
 # To start the application
 1. Clone the repository
-2. run mvn spring-boot:run
+2. run mvn spring-boot:run (this will start embedded jetty server )
 3. open http://localhost:8081
 
 # Note
