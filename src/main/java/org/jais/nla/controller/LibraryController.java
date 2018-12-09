@@ -21,7 +21,7 @@ public class LibraryController {
 
 	@GetMapping(value = "/")
     public String display(final Model model) {
-        model.addAttribute("greetings", "Welcome to Library");
+        model.addAttribute("greetings", "Welcome to the library.");
         return "index";
     }
 
