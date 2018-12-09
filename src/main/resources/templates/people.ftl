@@ -9,8 +9,7 @@
     <div class="container">
         <h2>People</h2>
         <p>A list of people is below.</p>
-        <p>On clicking a person, you can view list of books lent by the person.</p>
-        <p>To hide the list, click again on the person.</p>
+        <p>On clicking a person, you can view list of books lent by the person.To hide this list, click again on the person.</p>
     </div>
 </div>
 <div class="container" role="main">
