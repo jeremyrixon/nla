@@ -13,8 +13,6 @@ $( document ).ready(function() {
 	  	  tr.append(td2);
 	  	  $(this).after(tr);
 	  	  
-	  	  // td2.html('<i>Loading Books...</i>');
-	  	  
 	  	  $.getJSON( '/person/' + personid + '/books', function( json ) {
 	  	    if (json.length == 0) {
 	  	      var p = $('<p>This person currently has no books.</p>');
