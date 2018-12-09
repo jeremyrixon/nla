@@ -7,6 +7,7 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
+        <h2>People</h2>
         <p>A list of people is below.</p>
         <p>On clicking a person, you can view list of books lent by the person.</p>
         <p>To hide the list, click again on the person.</p>
@@ -22,7 +23,6 @@
                 <th>Contact Number</th>
                 <th>Email</th>
             </tr>
-            List of people
         <#list personList as person>
             <tr id=${person.id}>
                 <td>${person.firstName}</td>
