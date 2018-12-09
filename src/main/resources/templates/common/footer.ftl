@@ -1,7 +1,7 @@
     <footer class="footer">
       <div class="container">
         <p class="text-muted">References
-            <a href="http://spring.io">Spring</a>,
+            <a href="https://spring.io/projects/spring-boot">Spring Boot</a>,
         	<a href="http://freemarker.apache.org/">FreeMarker</a>,
         	<a href="http://getbootstrap.com">Bootstrap</a>,
             <a href="http://jquery.com">jQuery</a>,

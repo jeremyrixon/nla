@@ -7,6 +7,11 @@ Following assumptions are made while building the project :-
 1. A person can lend any number of books at a time
 2. A book can be lent to one person at a time
 
+#To start 
+1. Clone the repository
+2. run mvn spring-boot:run
+3. open http://localhost:8081
+
 #Note
 1. The application shows who is currently lending the book
 2. The application does not show a history of people who have lent the book
