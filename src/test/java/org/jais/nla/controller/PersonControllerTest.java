@@ -42,7 +42,5 @@ public class PersonControllerTest {
 
         this.mockMvc.perform(get("/person/1/books")
                 .contentType(MediaType.APPLICATION_JSON_VALUE));
-//                .andExpect(jsonPath("$", hasSize(0)))
-//                .andExpect(jsonPath("$[0].title", is(book.getTitle())));
     }
 }
