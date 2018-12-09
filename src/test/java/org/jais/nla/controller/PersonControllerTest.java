@@ -33,6 +33,7 @@ public class PersonControllerTest {
 
     @Test
     public void shouldReturnJsonArrayWhenGetBooksWithPersonId() throws Exception {
+        //Not happy with this test
         final Book book = new Book("title", "author", "isbn");
 
         final List<Book> allbooks = Arrays.asList(book);
@@ -41,9 +42,7 @@ public class PersonControllerTest {
 
         this.mockMvc.perform(get("/person/1/books")
                 .contentType(MediaType.APPLICATION_JSON_VALUE));
-//                .andExpect(jsonPath("$", hasSize(0)));
+//                .andExpect(jsonPath("$", hasSize(0)))
 //                .andExpect(jsonPath("$[0].title", is(book.getTitle())));
-
-
     }
 }

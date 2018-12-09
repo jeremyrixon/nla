@@ -18,7 +18,7 @@ public class PersonController {
     private LibraryService libraryService;
 
     @GetMapping(value = "/person/{id}/books", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Book> getBooks(@PathVariable("id")final Integer personId) {
+    public @ResponseBody List<Book> getBooks(@PathVariable("id")final Integer personId) {
         return libraryService.getBooksLentToPerson(personId);
 
     }
