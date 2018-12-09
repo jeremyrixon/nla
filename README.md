@@ -7,7 +7,7 @@ Following assumptions are made while building the project :-
 1. A person can lend any number of books at a time
 2. A book can be lent to one person at a time
 
-# To start 
+# To start the application
 1. Clone the repository
 2. run mvn spring-boot:run
 3. open http://localhost:8081
@@ -19,5 +19,5 @@ Following assumptions are made while building the project :-
 # Technical 
 1. In this application I've relied on Hibernate to create the schema.
 It's not ideal in production environment to rely on hibernate to create the schema.
-Use Flyway or liquibase to instead.
+Use Flyway or Liquibase instead.
 
