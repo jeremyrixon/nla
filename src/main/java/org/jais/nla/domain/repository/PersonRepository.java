@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * Created by vandanajaiswal on 8/12/2018.
  */
-public interface PersonRepository extends JpaRepository<Person, Long> {
+public interface PersonRepository extends JpaRepository<Person, Integer> {
     List<Person> findAll();
 }

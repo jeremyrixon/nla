@@ -9,10 +9,10 @@ import java.util.List;
  * Created by vandanajaiswal on 9/12/2018.
  */
 public interface LibraryService {
-    List<Person> getAllPeople();
+    List<Person> getPersons();
 
     List<Book> getAllBooks();
 
-    List<Book> getAllBooksLentToPerson(Person person);
+    List<Book> getBooksLentToPerson(Integer personId);
 
 }

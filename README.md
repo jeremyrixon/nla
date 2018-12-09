@@ -11,3 +11,8 @@ Following assumptions are made while building the project :-
 1. The application shows who is currently lending the book
 2. The application does not show a history of people who have lent the book
 
+#Technical 
+1. In this application I've relied on Hibernate to create the schema.
+It's not ideal in production environment to rely on hibernate to create the schema.
+Use Flyway or liquibase to instead.
+

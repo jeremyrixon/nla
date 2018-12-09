@@ -8,6 +8,6 @@ import java.util.List;
 /**
  * Created by vandanajaiswal on 8/12/2018.
  */
-public interface BookRepository extends JpaRepository<Book, Long> {
+public interface BookRepository extends JpaRepository<Book, Integer> {
         List<Book> findAll();
 }

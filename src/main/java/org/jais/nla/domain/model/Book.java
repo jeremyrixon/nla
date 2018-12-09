@@ -23,15 +23,6 @@ public class Book implements Serializable{
     @Version
     private Integer version;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinTable(name = "person_books",
-//            joinColumns = {@JoinColumn(name = "book_id", insertable = false,
-//                    updatable = false, referencedColumnName = "id")},
-//            inverseJoinColumns = {@JoinColumn(name = "person_id", insertable = false,
-//                    updatable = false, referencedColumnName = "id")}
-//    )
-//    private Person person;
-
     public Book() {
     }
 
@@ -80,14 +71,6 @@ public class Book implements Serializable{
     public void setVersion(final Integer version) {
         this.version = version;
     }
-
-//    public Person getPerson() {
-//        return person;
-//    }
-
-//    public void setPerson(final Person person) {
-//        this.person = person;
-//    }
 
     @Override
     public boolean equals(final Object obj) {

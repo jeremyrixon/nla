@@ -7,7 +7,9 @@ import org.jais.nla.domain.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class LibraryServiceImpl implements LibraryService{
@@ -19,7 +21,7 @@ public class LibraryServiceImpl implements LibraryService{
     private PersonRepository personRepository;
 
     @Override
-    public List<Person> getAllPeople() {
+    public List<Person> getPersons() {
         return personRepository.findAll();
     }
 
@@ -29,9 +31,11 @@ public class LibraryServiceImpl implements LibraryService{
     }
 
     @Override
-    public List<Book> getAllBooksLentByPerson(final Integer personId) {
-//        return bookRepository.findByPerson(personId);
-//        not required
-        return null;
+    public List<Book> getBooksLentToPerson(final Integer personId) {
+        final Optional<Person> personOptional = personRepository.findById(personId);
+        if(!personOptional.isPresent()){
+            return Collections.EMPTY_LIST;
+        }
+        return personOptional.get().getBooks();
     }
 }
