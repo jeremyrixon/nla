@@ -20,16 +20,18 @@ public class LibraryServiceImpl implements LibraryService{
 
     @Override
     public List<Person> getAllPeople() {
-        return null;
+        return personRepository.findAll();
     }
 
     @Override
     public List<Book> getAllBooks() {
-        return null;
+        return bookRepository.findAll();
     }
 
     @Override
-    public List<Book> getAllBooksLentToPerson(final Person person) {
+    public List<Book> getAllBooksLentByPerson(final Integer personId) {
+//        return bookRepository.findByPerson(personId);
+//        not required
         return null;
     }
 }

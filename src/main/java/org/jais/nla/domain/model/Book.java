@@ -1,14 +1,15 @@
 package org.jais.nla.domain.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-public class Book {
+public class Book implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Integer id;
 
     @Column(nullable = false, unique = true)
     private String title;
@@ -22,9 +23,14 @@ public class Book {
     @Version
     private Integer version;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "person_id")
-    private Person person;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinTable(name = "person_books",
+//            joinColumns = {@JoinColumn(name = "book_id", insertable = false,
+//                    updatable = false, referencedColumnName = "id")},
+//            inverseJoinColumns = {@JoinColumn(name = "person_id", insertable = false,
+//                    updatable = false, referencedColumnName = "id")}
+//    )
+//    private Person person;
 
     public Book() {
     }
@@ -39,7 +45,7 @@ public class Book {
         return id;
     }
 
-    public void setId(final long id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -75,13 +81,13 @@ public class Book {
         this.version = version;
     }
 
-    public Person getPerson() {
-        return person;
-    }
+//    public Person getPerson() {
+//        return person;
+//    }
 
-    public void setPerson(final Person person) {
-        this.person = person;
-    }
+//    public void setPerson(final Person person) {
+//        this.person = person;
+//    }
 
     @Override
     public boolean equals(final Object obj) {

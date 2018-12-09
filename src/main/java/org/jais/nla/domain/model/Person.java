@@ -1,20 +1,17 @@
 package org.jais.nla.domain.model;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+import java.util.List;
 
 import static java.lang.String.format;
 
-/**
- * Created by vandanajaiswal on 8/12/2018.
- */
 @Entity
-public class Person {
+public class Person implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Integer id;
 
     @Column
     private String firstName;
@@ -28,9 +25,11 @@ public class Person {
     @Column
     private String contactNumber;
 
-    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    private Set<Book> books = new HashSet<>();
-
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(name = "PERSON_BOOKS",
+            joinColumns = {@JoinColumn(name = "person_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "book_id", referencedColumnName = "id")})
+    private List<Book> books;
 
     public Person() {
     }
@@ -39,7 +38,7 @@ public class Person {
         return id;
     }
 
-    public void setId(final long id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -75,13 +74,12 @@ public class Person {
         this.contactNumber = contactNumber;
     }
 
-    public Set<Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void addBook(final Book book){
-        books.add(book);
-        book.setPerson(this);
+    public void setBooks(final List<Book> books) {
+        this.books = books;
     }
 
     @Override
